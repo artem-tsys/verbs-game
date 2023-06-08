@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5em;
+  &--question {
+    color: green;
+  }
+  &--answer {
+    color: blue;
+  }
+}
+
+.value {
+  font-size: 24px;
+  color: #282c34;
+  margin-top: 15px;
+  border-radius: 5px;
+  padding: 8px 10px;
+  border: 1px solid #312626;
+
+}

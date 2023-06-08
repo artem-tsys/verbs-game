@@ -1,0 +1,858 @@
+{
+	"types": [
+		"v1",
+		"v2",
+		"v3",
+		"ua"
+	],
+	"verbs": [
+		{
+			"v1": "break",
+			"v2": "broke",
+			"v3": "broken",
+			"ua": "ломать",
+			"group": 1,
+			"id": "e67cdfe6-9334-498d-86bb-6125e562625b"
+		},
+		{
+			"v1": "wake",
+			"v2": "woke",
+			"v3": "woken",
+			"ua": "просыпаться",
+			"group": 1,
+			"id": "2f19a764-4661-4368-bcfb-2a2c8357f334"
+		},
+		{
+			"v1": "speak",
+			"v2": "spoke",
+			"v3": "spoken",
+			"ua": "говорить",
+			"group": 1,
+			"id": "21e3a769-96aa-4157-965a-e3804ed624b9"
+		},
+		{
+			"v1": "choose",
+			"v2": "chose",
+			"v3": "chosen",
+			"ua": "выбирать",
+			"group": 1,
+			"id": "52f80832-420f-450a-b716-17467f919f53"
+		},
+		{
+			"v1": "steal",
+			"v2": "stole",
+			"v3": "stolen",
+			"ua": "красть",
+			"group": 1,
+			"id": "f3990a35-4720-4d30-8870-a906bd4fc8f9"
+		},
+		{
+			"v1": "freeze",
+			"v2": "froze",
+			"v3": "frozen",
+			"ua": "замораживать",
+			"group": 1,
+			"id": "f50873db-0cd0-4433-bcda-e307b7f8867c"
+		},
+		{
+			"v1": "blow",
+			"v2": "blew",
+			"v3": "blown",
+			"ua": "дуть",
+			"group": 2,
+			"id": "a512aeb4-d7fa-427a-abac-ac14046ba9b0"
+		},
+		{
+			"v1": "grow",
+			"v2": "grew",
+			"v3": "grown",
+			"ua": "расти",
+			"group": 2,
+			"id": "d7f6f618-e02a-4083-8288-613523faa466"
+		},
+		{
+			"v1": "know",
+			"v2": "knew",
+			"v3": "known",
+			"ua": "знать",
+			"group": 2,
+			"id": "2dd6fbfb-b1d2-46ab-b1e7-df7eb0a76f3e"
+		},
+		{
+			"v1": "throw",
+			"v2": "threw",
+			"v3": "thrown",
+			"ua": "бросать",
+			"group": 2,
+			"id": "405ae400-e0f7-4e10-89c3-9f7ba3bc6418"
+		},
+		{
+			"v1": "fly",
+			"v2": "flew",
+			"v3": "flown",
+			"ua": "летать",
+			"group": 2,
+			"id": "5361cda0-68c6-4d22-b56b-aad068dddc9d"
+		},
+		{
+			"v1": "draw",
+			"v2": "drew",
+			"v3": "drawn",
+			"ua": "рисовать",
+			"group": 2,
+			"id": "bfe35bc0-c7c0-4a79-8774-54011dd27c1d"
+		},
+		{
+			"v1": "lie",
+			"v2": "lay",
+			"v3": "lain",
+			"ua": "лежать",
+			"group": 2,
+			"id": "ec567524-8531-402c-9630-3920327f07bf"
+		},
+		{
+			"v1": "show",
+			"v2": "showed",
+			"v3": "shown",
+			"ua": "показывать",
+			"group": 2,
+			"id": "29f95598-03dd-45f9-8d45-2840926d08ec"
+		},
+		{
+			"v1": "sew",
+			"v2": "sewed",
+			"v3": "sewn",
+			"ua": "шить",
+			"group": 2,
+			"id": "3e1aa38e-4ab8-40bb-bb99-fa717ecef82e"
+		},
+		{
+			"v1": "bring",
+			"v2": "brought",
+			"v3": "brought",
+			"ua": "приносить",
+			"group": 3,
+			"id": "1a8d8d85-1ef2-468d-af07-e18ad3d37103"
+		},
+		{
+			"v1": "buy",
+			"v2": "bought",
+			"v3": "bought",
+			"ua": "покупать",
+			"group": 3,
+			"id": "cc4eb939-b0b4-422b-a0b4-a05ea146a684"
+		},
+		{
+			"v1": "fight",
+			"v2": "fought",
+			"v3": "fought",
+			"ua": "бороться",
+			"group": 3,
+			"id": "bc1dde5c-c6b8-4020-8de7-d728617a9220"
+		},
+		{
+			"v1": "think",
+			"v2": "thought",
+			"v3": "thought",
+			"ua": "думать",
+			"group": 3,
+			"id": "c5539a8a-4e7f-4bc4-bf13-c48602df20e0"
+		},
+		{
+			"v1": "catch",
+			"v2": "caught",
+			"v3": "caught",
+			"ua": "ловить",
+			"group": 3,
+			"id": "a8f7aaa5-ce51-4389-a5bd-e55007841d4c"
+		},
+		{
+			"v1": "teach",
+			"v2": "taught",
+			"v3": "taught",
+			"ua": "учить",
+			"group": 3,
+			"id": "61c64dd5-f387-40cc-9ed6-afa5ed19e231"
+		},
+		{
+			"v1": "drive",
+			"v2": "drove",
+			"v3": "driven",
+			"ua": "водить",
+			"group": 4,
+			"id": "abe5b537-83b2-4973-b5a7-eed9f6de80aa"
+		},
+		{
+			"v1": "rise",
+			"v2": "rose",
+			"v3": "risen",
+			"ua": "подниматься",
+			"group": 4,
+			"id": "ca4cd8e7-7233-4a98-9927-db11e30a27f7"
+		},
+		{
+			"v1": "ride",
+			"v2": "rode",
+			"v3": "ridden",
+			"ua": "ездить",
+			"group": 4,
+			"id": "18cb7bb8-d236-4db5-b5bd-08be5f9b0df1"
+		},
+		{
+			"v1": "write",
+			"v2": "wrote",
+			"v3": "written",
+			"ua": "писать",
+			"group": 4,
+			"id": "1e32f654-8a30-475d-a616-70f38719e887"
+		},
+		{
+			"v1": "bite",
+			"v2": "bit",
+			"v3": "bitten",
+			"ua": "кусать",
+			"group": 4,
+			"id": "f1aa9442-7d64-4762-bb3d-c0ebef599d69"
+		},
+		{
+			"v1": "hide",
+			"v2": "hid",
+			"v3": "hidden",
+			"ua": "прятать",
+			"group": 4,
+			"id": "6e83971c-ab55-425a-bc28-5a4ddc183283"
+		},
+		{
+			"v1": "beat",
+			"v2": "beat",
+			"v3": "beaten",
+			"ua": "бить",
+			"group": 4,
+			"id": "5741566e-d775-4534-ad50-3ffe09f46746"
+		},
+		{
+			"v1": "give",
+			"v2": "gave",
+			"v3": "given",
+			"ua": "давать",
+			"group": 4,
+			"id": "f442d5cb-9386-414b-bc9d-86fc23348759"
+		},
+		{
+			"v1": "eat",
+			"v2": "ate",
+			"v3": "eaten",
+			"ua": "есть",
+			"group": 4,
+			"id": "9aad96ea-43b3-410f-a9c0-bb46e9531d9c"
+		},
+		{
+			"v1": "fall",
+			"v2": "fell",
+			"v3": "fallen",
+			"ua": "падать",
+			"group": 4,
+			"id": "201eb732-3888-45ec-99c3-f44ba9269b1b"
+		},
+		{
+			"v1": "shake",
+			"v2": "shook",
+			"v3": "shaken",
+			"ua": "трясти",
+			"group": 4,
+			"id": "30120e8b-0114-47a9-8160-7d0917f0baaa"
+		},
+		{
+			"v1": "take",
+			"v2": "took",
+			"v3": "taken",
+			"ua": "брать",
+			"group": 4,
+			"id": "293d5f03-e7bf-41e2-bb38-399a8be114f3"
+		},
+		{
+			"v1": "keep",
+			"v2": "kept",
+			"v3": "kept",
+			"ua": "хранить",
+			"group": 5,
+			"id": "519f3a6b-f4ec-4905-a462-781ee1a3922b"
+		},
+		{
+			"v1": "sleep",
+			"v2": "slept",
+			"v3": "slept",
+			"ua": "спать",
+			"group": 5,
+			"id": "64700c78-3768-4905-a490-ba3cb2770e00"
+		},
+		{
+			"v1": "sweep",
+			"v2": "swept",
+			"v3": "swept",
+			"ua": "подметать",
+			"group": 5,
+			"id": "426f7bec-2a46-4b8f-aa34-670a69d38c5f"
+		},
+		{
+			"v1": "weep",
+			"v2": "wept",
+			"v3": "wept",
+			"ua": "плакать",
+			"group": 5,
+			"id": "b22e5b41-d9be-4000-b0b8-a28798452e35"
+		},
+		{
+			"v1": "creep",
+			"v2": "crept",
+			"v3": "crept",
+			"ua": "ползать",
+			"group": 5,
+			"id": "0a4a9176-4e64-4ecd-9c2a-8c49cb1c6d2d"
+		},
+		{
+			"v1": "kneel",
+			"v2": "knelt",
+			"v3": "knelt",
+			"ua": "стоять на коленях",
+			"group": 5,
+			"id": "08c09779-9e25-44be-ac22-e1b2f58db8b9"
+		},
+		{
+			"v1": "feel",
+			"v2": "felt",
+			"v3": "felt",
+			"ua": "чувствовать",
+			"group": 5,
+			"id": "0d00db00-4d0f-4ff9-8676-3c603f16f2eb"
+		},
+		{
+			"v1": "leave",
+			"v2": "left",
+			"v3": "left",
+			"ua": "уходить",
+			"group": 5,
+			"id": "fc2fc9b8-6b8a-4f68-b3d3-12eaccc1bc30"
+		},
+		{
+			"v1": "lose",
+			"v2": "lost",
+			"v3": "lost",
+			"ua": "терять",
+			"group": 5,
+			"id": "c286313c-32ac-43b1-946d-e53e36dbce83"
+		},
+		{
+			"v1": "be",
+			"v2": "was/were",
+			"v3": "been",
+			"ua": "быть",
+			"group": 6,
+			"id": "5a1bc4d7-f7d7-4a01-8113-f37554fe21c1"
+		},
+		{
+			"v1": "go",
+			"v2": "went",
+			"v3": "gone/been to",
+			"ua": "идти/ехать",
+			"group": 6,
+			"id": "ff1e346f-f740-4f4c-8f2d-b6e7e2d3e244"
+		},
+		{
+			"v1": "do",
+			"v2": "did",
+			"v3": "done",
+			"ua": "делать",
+			"group": 6,
+			"id": "4cc2077a-2bd1-41bf-9bc1-f24ac868f004"
+		},
+		{
+			"v1": "see",
+			"v2": "saw",
+			"v3": "seen",
+			"ua": "видеть",
+			"group": 6,
+			"id": "2d0a60c6-0a85-496e-8b88-15c196d1f301"
+		},
+		{
+			"v1": "send",
+			"v2": "sent",
+			"v3": "sent",
+			"ua": "отправлять",
+			"group": 7,
+			"id": "97130fd1-2849-4e90-9b04-a8ac7d80a65a"
+		},
+		{
+			"v1": "spend",
+			"v2": "spent",
+			"v3": "spent",
+			"ua": "тратить",
+			"group": 7,
+			"id": "209c5830-383d-4993-9c1b-16081168c537"
+		},
+		{
+			"v1": "bend",
+			"v2": "bent",
+			"v3": "bent",
+			"ua": "гнуть",
+			"group": 7,
+			"id": "7810a61a-d956-4720-8e79-bcf35fd204a6"
+		},
+		{
+			"v1": "lend",
+			"v2": "lent",
+			"v3": "lent",
+			"ua": "одалживать",
+			"group": 7,
+			"id": "c0887eef-d668-4d20-85fb-aaf97a5b17b4"
+		},
+		{
+			"v1": "mean",
+			"v2": "meant",
+			"v3": "meant",
+			"ua": "означать",
+			"group": 7,
+			"id": "5209c296-d201-43fc-97af-974d4197ff0c"
+		},
+		{
+			"v1": "build",
+			"v2": "built",
+			"v3": "built",
+			"ua": "строить",
+			"group": 7,
+			"id": "151adc4a-36dd-4006-a856-cbe0b82075d3"
+		},
+		{
+			"v1": "stand",
+			"v2": "stood",
+			"v3": "stood",
+			"ua": "стоять",
+			"group": 8,
+			"id": "235f2c28-556c-45a8-acf9-86cc20f424ef"
+		},
+		{
+			"v1": "understand",
+			"v2": "understood",
+			"v3": "understood",
+			"ua": "понимать",
+			"group": 8,
+			"id": "9272201c-78bf-4174-90b2-feac968c802e"
+		},
+		{
+			"v1": "tell",
+			"v2": "told",
+			"v3": "told",
+			"ua": "рассказывать",
+			"group": 8,
+			"id": "5bd0f4b6-cf8e-4f91-bb34-c5851f8c0e37"
+		},
+		{
+			"v1": "sell",
+			"v2": "sold",
+			"v3": "sold",
+			"ua": "продавать",
+			"group": 8,
+			"id": "eb37b3d8-73fd-4a07-b581-723064621ac4"
+		},
+		{
+			"v1": "say",
+			"v2": "said /sed/",
+			"v3": "said /sed/",
+			"ua": "говорить",
+			"group": 9,
+			"id": "daed3bde-b92c-47e4-a018-0a711b408f0e"
+		},
+		{
+			"v1": "pay",
+			"v2": "paid",
+			"v3": "paid",
+			"ua": "платить",
+			"group": 9,
+			"id": "c10517a7-780d-46a4-90cb-1b1d13c9f69b"
+		},
+		{
+			"v1": "lay",
+			"v2": "laid",
+			"v3": "laid",
+			"ua": "класть",
+			"group": 9,
+			"id": "29bd9052-30e6-4cc0-bef6-bfb08ffa3893"
+		},
+		{
+			"v1": "swear",
+			"v2": "swore",
+			"v3": "sworn",
+			"ua": "клясться",
+			"group": 10,
+			"id": "55021158-9f96-466f-baff-f661da923367"
+		},
+		{
+			"v1": "tear",
+			"v2": "tore",
+			"v3": "torn",
+			"ua": "рвать",
+			"group": 10,
+			"id": "6affe40e-8413-4f22-82d4-4f507424558f"
+		},
+		{
+			"v1": "wear",
+			"v2": "wore",
+			"v3": "worn",
+			"ua": "носить",
+			"group": 10,
+			"id": "8f343b2f-e386-4f91-8361-feb9bbcf8e11"
+		},
+		{
+			"v1": "bet",
+			"v2": "bet",
+			"v3": "bet",
+			"ua": "ставить",
+			"group": 11,
+			"id": "b5594aa4-e643-4306-90d9-faee263c7a67"
+		},
+		{
+			"v1": "split",
+			"v2": "split",
+			"v3": "split",
+			"ua": "разделить",
+			"group": 11,
+			"id": "c762d2f2-8b08-4fb7-bfa0-41ec6a95fe33"
+		},
+		{
+			"v1": "cost",
+			"v2": "cost",
+			"v3": "cost",
+			"ua": "стоить",
+			"group": 11,
+			"id": "263c9f45-4ca3-47f2-a289-64f619d2b2f9"
+		},
+		{
+			"v1": "cut",
+			"v2": "cut",
+			"v3": "cut",
+			"ua": "резать",
+			"group": 11,
+			"id": "ac581f8b-c1dd-41f0-b065-61d7a78fb21e"
+		},
+		{
+			"v1": "hit",
+			"v2": "hit",
+			"v3": "hit",
+			"ua": "ударить",
+			"group": 11,
+			"id": "464511b7-7061-4feb-b70d-1664fb2d4f0b"
+		},
+		{
+			"v1": "knit",
+			"v2": "knit",
+			"v3": "knit",
+			"ua": "вязать",
+			"group": 11,
+			"id": "be71c8bf-6a5b-4db3-b83c-37caf2dfc294"
+		},
+		{
+			"v1": "let",
+			"v2": "let",
+			"v3": "let",
+			"ua": "позволять",
+			"group": 11,
+			"id": "0a86dd1f-f224-4977-afed-3500dad30ca4"
+		},
+		{
+			"v1": "shut",
+			"v2": "shut",
+			"v3": "shut",
+			"ua": "закрыть",
+			"group": 11,
+			"id": "ec894b09-be26-4002-9393-f6168dd0927b"
+		},
+		{
+			"v1": "set",
+			"v2": "set",
+			"v3": "set",
+			"ua": "устанавливать",
+			"group": 11,
+			"id": "42f2d363-1365-4c86-ba42-9033abce9084"
+		},
+		{
+			"v1": "hurt",
+			"v2": "hurt",
+			"v3": "hurt",
+			"ua": "причинять боль",
+			"group": 11,
+			"id": "02d0624d-f9b9-4b26-b82c-ad6cc1b93fef"
+		},
+		{
+			"v1": "broadcast",
+			"v2": "broadcast",
+			"v3": "broadcast",
+			"ua": "вещать",
+			"group": 11,
+			"id": "982ddd9b-52a3-44ba-8a16-60a1c9a7b77a"
+		},
+		{
+			"v1": "find",
+			"v2": "found",
+			"v3": "found",
+			"ua": "находить",
+			"group": 12,
+			"id": "8ba890ab-b573-44b7-a61f-d6d061ab6b52"
+		},
+		{
+			"v1": "make",
+			"v2": "made",
+			"v3": "made",
+			"ua": "делать",
+			"group": 12,
+			"id": "713156c9-6a6c-48d6-b759-f03b272d68e6"
+		},
+		{
+			"v1": "have",
+			"v2": "had",
+			"v3": "had",
+			"ua": "иметь",
+			"group": 12,
+			"id": "73bbefe1-b19b-414b-b81d-cc583876d770"
+		},
+		{
+			"v1": "sit",
+			"v2": "sat",
+			"v3": "sat",
+			"ua": "сидеть",
+			"group": 12,
+			"id": "fdaffe96-2b06-47a6-a9a6-2dcb9c0adac2"
+		},
+		{
+			"v1": "strike",
+			"v2": "struck",
+			"v3": "struck",
+			"ua": "ударять",
+			"group": 12,
+			"id": "cb151aac-c329-4e56-9efd-19f9090eaeb9"
+		},
+		{
+			"v1": "dig",
+			"v2": "dug",
+			"v3": "dug",
+			"ua": "копать",
+			"group": 12,
+			"id": "4c493b1d-dfae-42e1-91c0-29fa9c1dbd1a"
+		},
+		{
+			"v1": "spin",
+			"v2": "spun",
+			"v3": "spun",
+			"ua": "вращать",
+			"group": 12,
+			"id": "6c334d70-cd81-42dd-b5d9-c5f425fa6458"
+		},
+		{
+			"v1": "sting",
+			"v2": "stung",
+			"v3": "stung",
+			"ua": "жалить",
+			"group": 12,
+			"id": "b97498dc-5077-4cd3-903e-1c3e51b66fdc"
+		},
+		{
+			"v1": "stick",
+			"v2": "stuck",
+			"v3": "stuck",
+			"ua": "приклеивать",
+			"group": 12,
+			"id": "b02fd969-1e8d-4e53-98e2-c0a8581291f9"
+		},
+		{
+			"v1": "hang",
+			"v2": "hung",
+			"v3": "hung",
+			"ua": "висеть",
+			"group": 12,
+			"id": "f537a15e-5570-4e9b-a719-57d962523342"
+		},
+		{
+			"v1": "lead",
+			"v2": "led",
+			"v3": "led",
+			"ua": "вести",
+			"group": 13,
+			"id": "51ec1c9d-33cc-4da3-b13e-39bb10a69244"
+		},
+		{
+			"v1": "feed",
+			"v2": "fed",
+			"v3": "fed",
+			"ua": "кормить",
+			"group": 13,
+			"id": "c975cabe-5755-4170-a932-cac553554853"
+		},
+		{
+			"v1": "meet",
+			"v2": "met",
+			"v3": "met",
+			"ua": "встречать",
+			"group": 13,
+			"id": "472514ac-a786-4f77-9dec-3084f196bcb9"
+		},
+		{
+			"v1": "read",
+			"v2": "read",
+			"v3": "read",
+			"ua": "читать",
+			"group": 13,
+			"id": "aaaa8e20-61cf-4e19-bb6e-e0ed70b3f894"
+		},
+		{
+			"v1": "hold",
+			"v2": "held",
+			"v3": "held",
+			"ua": "держать",
+			"group": 13,
+			"id": "2a5f2a5a-3dd6-4104-b6f5-d2c3e664faf7"
+		},
+		{
+			"v1": "slide",
+			"v2": "slid",
+			"v3": "slid",
+			"ua": "скользить",
+			"group": 13,
+			"id": "ba2d5967-edf2-4b40-9bab-4e4f8da70c74"
+		},
+		{
+			"v1": "light",
+			"v2": "lit",
+			"v3": "lit",
+			"ua": "освещать",
+			"group": 13,
+			"id": "12651c23-a6e8-49e2-a770-d121b486578b"
+		},
+		{
+			"v1": "begin",
+			"v2": "began",
+			"v3": "begun",
+			"ua": "начинать",
+			"group": 14,
+			"id": "e3e82e01-9c9d-4723-8a85-a9024032315f"
+		},
+		{
+			"v1": "ring",
+			"v2": "rang",
+			"v3": "rung",
+			"ua": "звонить",
+			"group": 14,
+			"id": "de245d29-477f-483c-982a-92476ddb88c6"
+		},
+		{
+			"v1": "sing",
+			"v2": "sang",
+			"v3": "sung",
+			"ua": "петь",
+			"group": 14,
+			"id": "872b4f43-b0d5-418c-9f2c-2ad5cf144c0c"
+		},
+		{
+			"v1": "sink",
+			"v2": "sank",
+			"v3": "sunk",
+			"ua": "тонуть",
+			"group": 14,
+			"id": "bea521e4-baa6-4881-b7b1-c9085b8b22d7"
+		},
+		{
+			"v1": "drink",
+			"v2": "drank",
+			"v3": "drunk",
+			"ua": "пить",
+			"group": 14,
+			"id": "75087b24-fc64-443f-9cd9-1108d6925cb0"
+		},
+		{
+			"v1": "shrink",
+			"v2": "shrank",
+			"v3": "shrunk",
+			"ua": "сжиматься",
+			"group": 14,
+			"id": "1781e9f8-3186-4139-a927-4a2d6117912b"
+		},
+		{
+			"v1": "swim",
+			"v2": "swam",
+			"v3": "swum",
+			"ua": "плавать",
+			"group": 14,
+			"id": "50eb9f27-07fd-4d2d-96c7-38e7c8216162"
+		},
+		{
+			"v1": "come",
+			"v2": "came",
+			"v3": "come",
+			"ua": "приходить",
+			"group": 15,
+			"id": "fe9bfcf7-baf2-4992-ae74-145e74a87db3"
+		},
+		{
+			"v1": "become",
+			"v2": "became",
+			"v3": "become",
+			"ua": "становиться",
+			"group": 15,
+			"id": "fc5e7807-0dcf-4597-a365-62e496d6818a"
+		},
+		{
+			"v1": "run",
+			"v2": "ran",
+			"v3": "run",
+			"ua": "бежать",
+			"group": 15,
+			"id": "b8529aac-9064-48b9-b679-1db74c464754"
+		},
+		{
+			"v1": "hear",
+			"v2": "heard",
+			"v3": "heard",
+			"ua": "слышать",
+			"group": 16,
+			"id": "52a3651e-0bc2-4ce6-86af-e04bdd848540"
+		},
+		{
+			"v1": "learn",
+			"v2": "learnt",
+			"v3": "learnt",
+			"ua": "учиться",
+			"group": 16,
+			"id": "52a90a81-a23f-4b83-8414-b514b4ffc1ac"
+		},
+		{
+			"v1": "burn",
+			"v2": "burnt",
+			"v3": "burnt",
+			"ua": "гореть",
+			"group": 16,
+			"id": "e6571930-ed1b-41cd-a7da-1f68780a0be1"
+		},
+		{
+			"v1": "get",
+			"v2": "got",
+			"v3": "got",
+			"ua": "получать",
+			"group": 16,
+			"id": "202d6c76-4a4b-4b55-b917-f5030553105a"
+		},
+		{
+			"v1": "win",
+			"v2": "won",
+			"v3": "won",
+			"ua": "выигрывать",
+			"group": 16,
+			"id": "05ea679e-6517-4151-8235-c7ea64f932e2"
+		},
+		{
+			"v1": "forget",
+			"v2": "forgot",
+			"v3": "forgotten",
+			"ua": "забывать",
+			"group": 16,
+			"id": "76ab7caa-7f43-4b0f-93b1-763f4a800c93"
+		}
+	]
+}

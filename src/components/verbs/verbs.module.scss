@@ -1,0 +1,31 @@
+.list {
+  padding: 0;
+  list-style: none;
+}
+
+.element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  &__group {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.group {
+  column-count: 2;
+}
+
+.wrap {
+  padding: 0 20px;
+}
