@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.2",
     "express": "^4.18.2",
+    "gh-pages": "^5.0.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,6 +26,8 @@
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"npm run node-server\"",
     "build": "react-scripts build",
+	  "predeploy": "npm run build",
+	  "deploy": "gh-pages -d build",
     "node-server": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
