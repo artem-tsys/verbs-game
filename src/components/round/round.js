@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import {
   countLearnedVerbsSelector,
-  countLearningVerbsSelector, learningSelector, roundSelector, studyVerbsRemainListSelector
+  countLearningVerbsSelector, roundSelector, studyVerbsRemainListSelector
 } from '../../store/game/game.selectors';
 import {typesSelector} from '../../store/verbs/verbs.selectors';
 import {getUniqTwoRandomElements} from '../../utils/getUniqTwoRandomElements';
