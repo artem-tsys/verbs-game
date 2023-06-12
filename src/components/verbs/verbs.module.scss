@@ -12,14 +12,26 @@
 .label {
   display: flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
   &__group {
     width: 100%;
     justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.label-lvl2 {
+  &__group {
+    padding: 0!important;
   }
 }
 
 .container {
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .group {
@@ -28,4 +40,9 @@
 
 .wrap {
   padding: 0 20px;
+}
+
+.control {
+  padding: 0;
+  margin: 0;
 }

@@ -32,8 +32,6 @@ export const Verbs = ({ selected, changeSelected, changeSelectedGroup}) => {
     return !elements.every((elem) => firstElValue === selected.includes(elem.id))
   };
 
-  console.log(verbs);
-
   if(!verbs.length) return null;
   const groups = Object.values(groupBy(verbs, 'group'));
 
@@ -56,11 +54,11 @@ export const Verbs = ({ selected, changeSelected, changeSelectedGroup}) => {
               checked={isCollectionIncludesEveryIds(group, selected)}
               control={<Checkbox onChange={() => onSelectAll(group)}  indeterminate={isIndeterminate(group)}/>}
             />
-            <AccordionSummary className={styles.label__group} expandIcon={<ExpandMoreIcon />}>
+            <AccordionSummary classes={{ root: cn(styles.label__group, styles['label-lvl2__group'])}} expandIcon={<ExpandMoreIcon />}>
               <span className={styles.label}>group {group[0].group}</span>
             </AccordionSummary>
           </AccordionActions>
-          <AccordionDetails>
+          <AccordionDetails classes={{ root: styles.container }}>
             <VerbGroup
               group={group}
               selected={selected}

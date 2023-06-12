@@ -3,7 +3,7 @@ import {difference} from 'lodash';
 
 const initialState = {
   round: 1,
-  type: 'trust',
+  type: 'writing', // 'writing' || 'speaking'
   learningIds: [],
   learnedIds: []
 }
@@ -13,7 +13,6 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {
     setLearningIds: (state, {payload}) => {
-      console.log('setLearningIds -------');
       if(Array.isArray(payload)) {
         state.learningIds = payload;
       }

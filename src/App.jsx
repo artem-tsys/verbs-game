@@ -2,8 +2,8 @@ import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {ModalManager} from './components/popups/popup-factory';
-import {Game} from './pages/Game';
-import {Home} from './pages/Home';
+import {Game} from './pages/game/Game';
+import {Home} from './pages/home/Home';
 import {fetchVerbs} from './store/verbs/verbs.think';
 import style from './styles/main.module.scss';
 

@@ -1,26 +1,28 @@
 import {
-  Box,
   Button,
-  Grid
 } from '@mui/material';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import {Verbs} from '../components/verbs/verbs';
-import {setLearningIds} from '../store/game/game.slice';
+import {Verbs} from '../../components/verbs/verbs';
+import {setLearningIds} from '../../store/game/game.slice';
+import styles from './home.module.scss';
 
-const styles = {
-  container: {
-    height: '100%',
-    width: '100%'
-  },
-  verbsContainer: {
-    display: 'inline-block',
-    overflow: 'auto',
-    maxHeight: '80vh',
-    border: '1px solid #aeaeae'
-  }
-};
+// const styles = {
+//   container: {
+//     height: '100%',
+//     width: '100%'
+//   },
+//   title: {
+//     textAlign: 'center'
+//   },
+//   verbsContainer: {
+//     display: 'inline-block',
+//     overflow: 'auto',
+//     maxHeight: '100%',
+//     border: '1px solid #aeaeae'
+//   }
+// };
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -59,25 +61,22 @@ export const Home = () => {
     setSelected(handler);
   };
 
-  return <Grid container spacing={2} style={styles.container} >
-    <Grid item xs={12}>
-      <h2>
-        Select verbs for study
-      </h2>
-    </Grid>
-
-    <Grid item xs={3} style={styles.verbsContainer} >
+  return <div className={styles.container} >
+    <h2 className={styles.title}>
+      Select verbs for study
+    </h2>
+    <div className={styles.verbs} >
       <Verbs
         selected={selected}
         changeSelected={changeSelected}
         changeSelectedGroup={changeSelectedGroup}
       />
-    </Grid>
-    <Grid item xs={9}>
-      <Box mb={2}>{ !selected.length && 'select verbs' }</Box>
-      <Button onClick={handleStartGame} variant="contained" disabled={!selected.length}>
+    </div>
+    <span className={styles['empty-text']}>{ !selected.length && 'Select the verbs' }</span>
+    <div className={styles.footer}>
+      <Button mt={12} onClick={handleStartGame} variant="contained" disabled={!selected.length}>
         start game
       </Button>
-    </Grid>
-  </Grid>
+    </div>
+  </div>
 }

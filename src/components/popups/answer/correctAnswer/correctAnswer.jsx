@@ -1,8 +1,10 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {HIDE_MODAL} from '../../../../store/common/common.slice';
 import {Substrate} from '../../substrate';
-import style from '../../../../styles/popups.module.scss';
+import stylePopup from '../../../../styles/popups.module.scss';
+import style from '../answer.module.scss';
 
 export const CorrectAnswer = () => {
   const dispatch = useDispatch();
@@ -13,9 +15,11 @@ export const CorrectAnswer = () => {
   }, [])
 
   return <>
-    <div className={style.popup}>
-      <div className={style.popup__content}>
-        super!
+    <div className={stylePopup.popup}>
+      <div className={stylePopup.popup__content}>
+        <div className={style.icon}>
+          <CheckCircleOutlineIcon fontSize='inherit' color='success' />
+        </div>
       </div>
     </div>
     <Substrate />

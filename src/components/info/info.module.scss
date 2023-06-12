@@ -1,13 +1,22 @@
+@use '../../styles/breakpoints.module.scss' as brackpoints;
+
 .card {
   display: flex;
   flex-direction: column;
-  padding: 20px 30px;
+  padding: 10px 15px;
+  width: 100%;
+  @include brackpoints.tablet {
+    padding: 20px 30px;
+  }
 }
 
 .title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5em;
+  @include brackpoints.tablet {
+    font-size: 24px;
+  }
   &--question {
     color: green;
   }
@@ -17,11 +26,13 @@
 }
 
 .value {
-  font-size: 24px;
+  font-size: 18px;
   color: #282c34;
   margin-top: 15px;
   border-radius: 5px;
   padding: 8px 10px;
   border: 1px solid #312626;
-
+  @include brackpoints.tablet {
+    font-size: 24px;
+  }
 }

@@ -1,19 +1,25 @@
-import {Button, Stack} from '@mui/material';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {random} from 'lodash';
-import {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux';
-import {Link, useNavigate} from 'react-router-dom';
+import {useCallback, useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import {POPUP} from '../../constants/modal.constants';
+import {SHOW_MODAL} from '../../store/common/common.slice';
 import {
   countLearnedVerbsSelector,
-  countLearningVerbsSelector, learningSelector, roundSelector, studyVerbsRemainListSelector
+  countLearningVerbsSelector, roundSelector, studyVerbsRemainListSelector, typeModeSelector
 } from '../../store/game/game.selectors';
+import {addLearned, nextRound} from '../../store/game/game.slice';
 import {typesSelector} from '../../store/verbs/verbs.selectors';
 import {getUniqTwoRandomElements} from '../../utils/getUniqTwoRandomElements';
-import {Info} from '../info/info';
-import styles from './round.module.scss';
+import {SpeakingMode} from './components/speaking-mode/speaking-mode';
+import {WritingMode} from './components/writing-mode/writing-mode';
 
-export const Round = ({handleCorrect, handleIncorrect}) => {
+const mappingModes = {
+  speaking: SpeakingMode,
+  writing: WritingMode
+};
+
+export const Round = () => {
   const navigate = useNavigate();
   const verbs = useSelector(studyVerbsRemainListSelector);
   const typesDefault = useSelector(typesSelector);
@@ -22,6 +28,21 @@ export const Round = ({handleCorrect, handleIncorrect}) => {
   const countLearnedVerbs = useSelector(countLearnedVerbsSelector);
   const [currentVerb, setCurrentVerb] = useState({});
   const [types, setTypes] = useState({ ask: '', answer: '' });
+  const typeMode = useSelector(typeModeSelector);
+  const Component = mappingModes[typeMode];
+
+  const dispatch = useDispatch();
+
+  const handleCorrect = useCallback(() => {
+    dispatch(SHOW_MODAL({ name: POPUP.correctAnswer}))
+    dispatch(addLearned(currentVerb.id))
+    dispatch(nextRound())
+  }, []);
+
+  const handleIncorrect = useCallback(() => {
+    dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: currentVerb[types.ask] }}))
+    dispatch(nextRound())
+  }, []);
 
   useEffect(() => {
     const indexLastElem = verbs.length - 1;
@@ -40,40 +61,15 @@ export const Round = ({handleCorrect, handleIncorrect}) => {
     }
   }, [verbs])
 
-  if(!types.ask || !types.answer) return null;
+  if(!types.ask || !types.answer || !Component) return null;
 
-  return <div className={styles.container}>
-    <header className={styles.header}>
-      <Link to='/home'>
-        <KeyboardBackspaceIcon fontSize="large"/>
-      </Link>
-    </header>
-    <h1 className={styles.title}>
-      Study irregular verbs
-    </h1>
-    <div>verbs learned: {countLearnedVerbs}/{countLearningVerbs}</div>
-    <div className={styles.group}>
-      <div className={styles.verb}>
-        <Info title='Study the verb: ' value={currentVerb[types.ask]} variant='question'/>
-      </div>
-      <div className={styles.verb}>
-        <Info title='Reply in the form of: ' value={types.answer} variant='answer' />
-      </div>
-    </div>
-    <Stack spacing={2} direction="row" className={styles.buttonGroup} >
-        <Button
-          color='warning'
-          variant='contained'
-          className={styles.btn}
-          onClick={() => handleIncorrect(currentVerb[types.answer])} >
-          repeat verb
-        </Button>
-        <Button
-          color='success'
-          variant='contained'
-          className={styles.btn}
-          onClick={() => handleCorrect(currentVerb.id)}
-        >correct answer</Button>
-    </Stack>
-  </div>
+  return <Component
+    countLearnedVerbs={countLearnedVerbs}
+    countLearningVerbs={countLearningVerbs}
+    question={currentVerb[types.ask]}
+    answerValue={currentVerb[types.answer]}
+    answerType={types.answer}
+    handleCorrect={handleCorrect}
+    handleIncorrect={handleIncorrect}
+  />
 }
