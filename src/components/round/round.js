@@ -3,6 +3,7 @@ import {useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {POPUP} from '../../constants/modal.constants';
+import {languageSelector} from '../../store/common/common.selectors';
 import {SHOW_MODAL} from '../../store/common/common.slice';
 import {
   countLearnedVerbsSelector,
@@ -29,6 +30,7 @@ export const Round = () => {
   const [currentVerb, setCurrentVerb] = useState({});
   const [types, setTypes] = useState({ ask: '', answer: '' });
   const typeMode = useSelector(typeModeSelector);
+  const language = useSelector(languageSelector);
   const Component = mappingModes[typeMode];
 
   const dispatch = useDispatch();
@@ -37,12 +39,12 @@ export const Round = () => {
     dispatch(SHOW_MODAL({ name: POPUP.correctAnswer}))
     dispatch(addLearned(currentVerb.id))
     dispatch(nextRound())
-  }, []);
+  }, [currentVerb]);
 
   const handleIncorrect = useCallback(() => {
     dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: currentVerb[types.ask] }}))
     dispatch(nextRound())
-  }, []);
+  }, [currentVerb]);
 
   useEffect(() => {
     const indexLastElem = verbs.length - 1;
@@ -50,9 +52,13 @@ export const Round = () => {
     setCurrentVerb(verbs[nextElementIndex])
 
     const [askType, answerType] = getUniqTwoRandomElements(typesDefault);
-    if(askType && answerType) {
-      setTypes({ ask: askType, answer: answerType })
-    }
+
+    // if(askType && answerType) {
+      setTypes({
+        ask: askType === 'translate' ? language : askType,
+        answer: answerType === 'translate' ? language : answerType
+      })
+    // }
   }, [round])
 
   useEffect(() => {
@@ -61,13 +67,14 @@ export const Round = () => {
     }
   }, [verbs])
 
+  const answerValue = types.answer === 'translate' ? language : currentVerb[types.answer];
   if(!types.ask || !types.answer || !Component) return null;
 
   return <Component
     countLearnedVerbs={countLearnedVerbs}
     countLearningVerbs={countLearningVerbs}
     question={currentVerb[types.ask]}
-    answerValue={currentVerb[types.answer]}
+    answerValue={answerValue}
     answerType={types.answer}
     handleCorrect={handleCorrect}
     handleIncorrect={handleIncorrect}

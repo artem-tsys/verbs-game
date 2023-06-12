@@ -1,12 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {difference} from 'lodash';
+import {fetchVerbs} from '../verbs/verbs.think';
 
 const initialState = {
   round: 1,
   type: 'writing', // 'writing' || 'speaking'
   learningIds: [],
   learnedIds: []
-}
+};
 
 export const gameSlice = createSlice({
   name: 'game',
@@ -36,11 +37,14 @@ export const gameSlice = createSlice({
     resetRound: (state) => {
       state.round = 1;
     },
-  },
-  extraReducers: (builder) => {
-    builder.addCase('resetGame', (state) => {
+    resetGame: (state) => {
       state.round = 1;
       state.learnedIds = [];
+    }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchVerbs.fulfilled, (state, {payload}) => {
+      state.learningIds = payload.verbs.map(verb => verb.id) ?? [];
     })
   }
 })

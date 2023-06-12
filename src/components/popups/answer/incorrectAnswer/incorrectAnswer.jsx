@@ -1,4 +1,3 @@
-import {Typography} from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';

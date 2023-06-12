@@ -1,32 +1,20 @@
 import {
   Button,
 } from '@mui/material';
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
+import {Language} from '../../components/language/language';
+import {Mode} from '../../components/mode/mode';
 import {Verbs} from '../../components/verbs/verbs';
+import {studyVerbsIdsSelector} from '../../store/game/game.selectors';
 import {setLearningIds} from '../../store/game/game.slice';
 import styles from './home.module.scss';
-
-// const styles = {
-//   container: {
-//     height: '100%',
-//     width: '100%'
-//   },
-//   title: {
-//     textAlign: 'center'
-//   },
-//   verbsContainer: {
-//     display: 'inline-block',
-//     overflow: 'auto',
-//     maxHeight: '100%',
-//     border: '1px solid #aeaeae'
-//   }
-// };
 
 export const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const learningIds = useSelector(studyVerbsIdsSelector);
   const [selected, setSelected] = useState([]);
 
   const handleStartGame = () => {
@@ -61,10 +49,18 @@ export const Home = () => {
     setSelected(handler);
   };
 
+  useEffect(() => {
+    setSelected(learningIds)
+  }, [learningIds])
+
   return <div className={styles.container} >
-    <h2 className={styles.title}>
-      Select verbs for study
-    </h2>
+    <header className={styles.header}>
+      <h2 className={styles.title}>
+        Select verbs for study
+      </h2>
+      <Language />
+    </header>
+
     <div className={styles.verbs} >
       <Verbs
         selected={selected}
@@ -72,7 +68,7 @@ export const Home = () => {
         changeSelectedGroup={changeSelectedGroup}
       />
     </div>
-    <span className={styles['empty-text']}>{ !selected.length && 'Select the verbs' }</span>
+    <Mode />
     <div className={styles.footer}>
       <Button mt={12} onClick={handleStartGame} variant="contained" disabled={!selected.length}>
         start game
