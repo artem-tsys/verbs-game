@@ -6,11 +6,13 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
       if (!response.ok) {
         throw new Error('Network response was not OK');
       }
+      console.log('response', response);
       return response.json();
     })
     .catch((err) => {
+      alert(`error: ${err.message}`)
       throw new Error(err.message)
     })
-
+  alert(JSON.stringify(data));
   return data;
 })
