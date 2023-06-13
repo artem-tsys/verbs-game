@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const app = express();
+const fetch = require('node-fetch');
 
 app.use(cors());
 
