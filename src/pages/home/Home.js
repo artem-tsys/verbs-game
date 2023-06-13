@@ -62,6 +62,7 @@ export const Home = () => {
     </header>
 
     <div className={styles.verbs} >
+      verbs
       <Verbs
         selected={selected}
         changeSelected={changeSelected}

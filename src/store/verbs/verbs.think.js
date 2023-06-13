@@ -10,7 +10,7 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
       return response.json();
     })
     .catch((err) => {
-      alert(`error: ${err.message}`)
+      alert(`error: ${JSON.stringify(err)}`)
       throw new Error(err.message)
     })
   alert(JSON.stringify(data));
