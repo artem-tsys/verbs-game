@@ -22,7 +22,7 @@ function defaultTransformers(transformRequest) {
 
 export const axiosInstance = axios.create({
   baseURL: process.env.PUBLIC_URL,
-  timeout: 8000,
+  timeout: 60000,
   transformRequest: [
     (data) => {
       if (data instanceof FormData) {
