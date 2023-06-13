@@ -5,9 +5,8 @@ $border-color: #aeaeae;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto 60px;
-  height: 100%;
   width: 100%;
-  max-height: 100vh;
+  height: calc(100vh - env(safe-area-inset-top));
   @include brackpoints.tablet {
     grid-template-columns: 30% 1fr;
     grid-template-rows: initial;
