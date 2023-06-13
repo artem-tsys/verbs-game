@@ -64,8 +64,10 @@
   font-size: 14px!important;
   font-weight: 600;
   width: 50%;
-  padding: 5px 10px!important;
+  height: 50px;
+  padding: 10px!important;
   @include brackpoints.tablet {
+    height: auto;
     max-width: 250px;
     font-size: 16px;
     padding: 5px 10px;
