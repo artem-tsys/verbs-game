@@ -52,10 +52,9 @@
   justify-content: center;
   width: 100%;
   margin-top: 20px;
-  padding: 0 10px;
+  padding: 0;
   @include brackpoints.tablet {
     margin-top: 40px;
-    padding: 0;
   }
 }
 
