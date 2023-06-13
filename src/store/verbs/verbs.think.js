@@ -2,8 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 
 export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
   let data
-
-  await fetch('http://localhost:3005/verbs')
+  await fetch( `${process.env.PUBLIC_URL}/verbs`)
     .then(res => res.json())
     .then((res) => {
       data = res;
@@ -11,7 +10,6 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
     .catch((err) => {
       throw new Error(err.message)
     })
-
 
   return data;
 })
