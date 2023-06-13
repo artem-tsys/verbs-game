@@ -17,7 +17,7 @@ async function getDataFromFile(filePath) {
 app.get('/verbs', async (req, res) => {
   try {
     const jsonData = await getDataFromFile('db.json');
-
+    console.log('jsonData', jsonData);
     res.json(jsonData);
   } catch (err) {
     res.status(500).json({error: 'Ошибка сервера'});
