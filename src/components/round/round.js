@@ -53,12 +53,10 @@ export const Round = () => {
 
     const [askType, answerType] = getUniqTwoRandomElements(typesDefault);
 
-    // if(askType && answerType) {
-      setTypes({
-        ask: askType === 'translate' ? language : askType,
-        answer: answerType === 'translate' ? language : answerType
-      })
-    // }
+    setTypes({
+      ask: askType === 'translate' ? language : askType,
+      answer: answerType === 'translate' ? language : answerType
+    })
   }, [round])
 
   useEffect(() => {

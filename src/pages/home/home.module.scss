@@ -6,7 +6,7 @@ $border-color: #aeaeae;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto 60px;
   width: 100%;
-  height: calc(100vh - env(safe-area-inset-top));
+  height: 100%;
   @include brackpoints.tablet {
     grid-template-columns: 30% 1fr;
     grid-template-rows: initial;
@@ -25,12 +25,14 @@ $border-color: #aeaeae;
 
 .title {
   text-align: center;
-
+  padding: 0;
+  margin: 0;
 }
 
 .verbs{
   display: inline-block;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-height: 100%;
   border: 1px solid $border-color;
   border-bottom-color: transparent;
@@ -43,7 +45,7 @@ $border-color: #aeaeae;
   align-items: center;
   grid-column: 1/2;
   border-top: 1px solid $border-color;
-  padding: 10px;
+  padding: 5px 10px;
   @include brackpoints.tablet {
     padding: 20px;
     grid-column: 1/3;
