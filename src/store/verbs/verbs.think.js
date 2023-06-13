@@ -4,7 +4,15 @@ import getAxiosInstance from '../../api/axios-instanse';
 export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
   const instance = getAxiosInstance();
   const data = await instance.get('/verbs')
-    .then(res => res.data)
+    .then(res => {
+      const result = JSON.stringify(res)
+      const resultData = JSON.stringify(res.data)
+      const resultStatus = JSON.stringify(res.status)
+      alert(resultStatus)
+      alert(result)
+      alert(resultData)
+      return res.data;
+    })
     .catch((err) => {
       alert(`error: ${err.status} - ${err.message}`)
       throw new Error(err.message)
