@@ -14,7 +14,8 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
       return res.data;
     })
     .catch((err) => {
-      alert(`error: ${err.status} - ${err.message}`)
+      alert(`error: ${err.status} - ${err.statusText}`)
+      alert(`error data: ${err.data}`)
       throw new Error(err.message)
     })
   // const data = await fetch( `${process.env.PUBLIC_URL}/verbs`)
