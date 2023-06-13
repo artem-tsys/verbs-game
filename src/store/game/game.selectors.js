@@ -27,3 +27,4 @@ export const studyVerbsSelector = (state) => {
 
 export const countLearningVerbsSelector = (state) => state.game.learningIds.length;
 export const countLearnedVerbsSelector = (state) => state.game.learnedIds.length;
+export const typeModeSelector = state => state.game.type;

@@ -13,6 +13,7 @@ export const VerbGroup = ({group, selected, changeSelected}) => {
         key={world.id}
         labelPlacement='end'
         label={world.v1}
+        classes={{ root: styles.control }}
         checked={selected.includes(world.id)}
         control={<Checkbox value={world.id} onChange={onChange}/>}
       />)

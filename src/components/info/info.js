@@ -5,7 +5,8 @@ import styles from './info.module.scss';
 export const Info = ({
   title,
   value,
-  variant
+  variant,
+  children
 }) => {
   const classesTitle = cn(styles.title, {
       [styles['title--question']]: variant === 'question',
@@ -15,5 +16,6 @@ export const Info = ({
   return <Paper elevation={4} className={styles.card}>
     <span className={classesTitle}>{title }</span>
     <span className={styles.value}>{value}</span>
+    {children}
   </Paper>
 }
