@@ -3,7 +3,6 @@ import { camelizeKeys, decamelizeKeys } from 'humps';
 import qs from 'qs';
 
 function useAxiosErrors(error) {
-  alert(`error2: ${JSON.stringify(error)}`)
   if (error?.response?.status === 401) {
     window.location.href = `/`
     return null
