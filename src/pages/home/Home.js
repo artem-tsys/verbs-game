@@ -1,30 +1,20 @@
 import {
-  Box,
   Button,
-  Grid
 } from '@mui/material';
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import {Verbs} from '../components/verbs/verbs';
-import {setLearningIds} from '../store/game/game.slice';
-
-const styles = {
-  container: {
-    height: '100%',
-    width: '100%'
-  },
-  verbsContainer: {
-    display: 'inline-block',
-    overflow: 'auto',
-    maxHeight: '80vh',
-    border: '1px solid #aeaeae'
-  }
-};
+import {Language} from '../../components/language/language';
+import {Mode} from '../../components/mode/mode';
+import {Verbs} from '../../components/verbs/verbs';
+import {studyVerbsIdsSelector} from '../../store/game/game.selectors';
+import {setLearningIds} from '../../store/game/game.slice';
+import styles from './home.module.scss';
 
 export const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const learningIds = useSelector(studyVerbsIdsSelector);
   const [selected, setSelected] = useState([]);
 
   const handleStartGame = () => {
@@ -59,25 +49,30 @@ export const Home = () => {
     setSelected(handler);
   };
 
-  return <Grid container spacing={2} style={styles.container} >
-    <Grid item xs={12}>
-      <h2>
+  useEffect(() => {
+    setSelected(learningIds)
+  }, [learningIds])
+
+  return <div className={styles.container} >
+    <header className={styles.header}>
+      <h2 className={styles.title}>
         Select verbs for study
       </h2>
-    </Grid>
+      <Language />
+    </header>
 
-    <Grid item xs={3} style={styles.verbsContainer} >
+    <div className={styles.verbs} >
       <Verbs
         selected={selected}
         changeSelected={changeSelected}
         changeSelectedGroup={changeSelectedGroup}
       />
-    </Grid>
-    <Grid item xs={9}>
-      <Box mb={2}>{ !selected.length && 'select verbs' }</Box>
-      <Button onClick={handleStartGame} variant="contained" disabled={!selected.length}>
+    </div>
+    <Mode />
+    <div className={styles.footer}>
+      <Button mt={12} onClick={handleStartGame} variant="contained" disabled={!selected.length}>
         start game
       </Button>
-    </Grid>
-  </Grid>
+    </div>
+  </div>
 }

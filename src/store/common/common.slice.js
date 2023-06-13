@@ -6,12 +6,16 @@ const initialState = {
     data: null,
   },
   reserveModal: [],
+  language: 'ua'
 };
 
 export const commonSlice = createSlice({
   name: 'common',
   initialState,
   reducers: {
+    CHANGE_LANG: (state, {payload}) => {
+      state.language = payload ?? 'ua';
+    },
     SHOW_MODAL: (state, action) => {
       const {name, data} = action.payload;
       if (state.modal.name) {
@@ -30,4 +34,4 @@ export const commonSlice = createSlice({
   },
 });
 
-export const {SHOW_MODAL, HIDE_MODAL} = commonSlice.actions;
+export const {SHOW_MODAL, HIDE_MODAL, CHANGE_LANG} = commonSlice.actions;
