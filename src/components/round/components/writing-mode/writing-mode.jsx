@@ -5,8 +5,8 @@ import {Info} from '../../../info/info';
 import styles from './writing-mode.module.scss';
 
 const checkAnswer = (correct, value) => {
-  const first = correct.toLowerCase();
-  const second = value.toLowerCase();
+  const first = correct.trim().toLowerCase();
+  const second = value.trim().toLowerCase();
 
   return first === second;
 };
