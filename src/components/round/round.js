@@ -42,7 +42,7 @@ export const Round = () => {
   }, [currentVerb]);
 
   const handleIncorrect = useCallback(() => {
-    dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: currentVerb[types.ask] }}))
+    dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: currentVerb[types.answer] }}))
     dispatch(nextRound())
   }, [currentVerb]);
 

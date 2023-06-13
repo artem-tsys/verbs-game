@@ -52,7 +52,7 @@ export const Verbs = ({ selected, changeSelected, changeSelectedGroup}) => {
               key={`group ${i}`}
               labelPlacement='end'
               checked={isCollectionIncludesEveryIds(group, selected)}
-              control={<Checkbox onChange={() => onSelectAll(group)}  indeterminate={isIndeterminate(group)}/>}
+              control={<Checkbox onChange={() => onSelectAll(group)} indeterminate={isIndeterminate(group)}/>}
             />
             <AccordionSummary classes={{ root: cn(styles.label__group, styles['label-lvl2__group'])}} expandIcon={<ExpandMoreIcon />}>
               <span className={styles.label}>group {group[0].group}</span>
