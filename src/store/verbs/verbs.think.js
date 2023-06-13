@@ -2,9 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import getAxiosInstance from '../../api/axios-instanse';
 
 export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
-  const instance = getAxiosInstance();
-  const data = await instance.get('/verbs')
-    .then(res => {
+  const data = await getAxiosInstance().get('/verbs').then(res => {
       const result = JSON.stringify(res)
       const resultData = JSON.stringify(res.data)
       const resultStatus = JSON.stringify(res.status)
@@ -12,9 +10,8 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
       alert(result)
       alert(resultData)
       return res.data;
-    })
-    .catch((err) => {
-      alert(`error: ${err.status} - ${err.statusText}`)
+    }).catch((err) => {
+      alert(`error: ${err} - ${err.statusText}`)
       alert(`error data: ${err.data}`)
       throw new Error(err.message)
     })
@@ -28,6 +25,6 @@ export const fetchVerbs = createAsyncThunk('verbs/fetchVerbs', async () => {
   //     alert(`error: ${err.status} - ${err.message}`)
   //     throw new Error(err.message)
   //   })
-  alert(JSON.stringify(data));
+
   return data;
 })

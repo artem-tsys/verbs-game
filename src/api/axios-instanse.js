@@ -3,6 +3,7 @@ import { camelizeKeys, decamelizeKeys } from 'humps';
 import qs from 'qs';
 
 function useAxiosErrors(error) {
+  alert(`error2: ${JSON.stringify(error)}`)
   if (error?.response?.status === 401) {
     window.location.href = `/`
     return null
@@ -22,7 +23,7 @@ function defaultTransformers(transformRequest) {
 
 export const axiosInstance = axios.create({
   baseURL: process.env.PUBLIC_URL,
-  timeout: 60000,
+  timeout: 8000,
   transformRequest: [
     (data) => {
       if (data instanceof FormData) {
