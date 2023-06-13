@@ -34,7 +34,7 @@ export const WritingMode = ({
     if(checkAnswer(answerValue, value)) {
       handleCorrect()
     } else {
-      handleIncorrect()
+      handleIncorrect(answerValue)
     }
   };
 

@@ -1,26 +1,10 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import {ModalManager} from './components/popups/popup-factory';
-import {Game} from './pages/game/Game';
-import {Home} from './pages/home/Home';
+import {RoutesPages} from './routes/RoutesPages';
 import {fetchVerbs} from './store/verbs/verbs.think';
 import style from './styles/main.module.scss';
-
-const routes = createBrowserRouter([
-  {
-    path: 'home',
-    element: <Home />,
-  },
-  {
-    path: 'game',
-    element: <Game />,
-  },
-  {
-    path: '*',
-    element: <Home />
-  }
-])
 
 function App() {
   const dispatch = useDispatch();
@@ -30,10 +14,12 @@ function App() {
   }, [])
 
   return (
-    <div className={style.app}>
-      <RouterProvider router={routes} />
-      <ModalManager />
-    </div>
+    <BrowserRouter>
+      <div className={style.app}>
+        <RoutesPages />
+        <ModalManager />
+      </div>
+    </BrowserRouter>
   );
 }
 

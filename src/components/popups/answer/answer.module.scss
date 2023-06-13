@@ -13,4 +13,7 @@
 
 .icon {
   font-size: 122px;
+  @include brackpoints.tablet {
+    font-size: 96px!important;
+  }
 }

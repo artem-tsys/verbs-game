@@ -41,8 +41,8 @@ export const Round = () => {
     dispatch(nextRound())
   }, [currentVerb]);
 
-  const handleIncorrect = useCallback(() => {
-    dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: currentVerb[types.answer] }}))
+  const handleIncorrect = useCallback((answerValue) => {
+    dispatch(SHOW_MODAL({ name: POPUP.incorrectAnswer, data: { answer: answerValue }}))
     dispatch(nextRound())
   }, [currentVerb]);
 
@@ -61,6 +61,9 @@ export const Round = () => {
 
   useEffect(() => {
     if(!verbs.length) {
+      dispatch(SHOW_MODAL({
+        name: POPUP.finishRound
+      }))
       navigate('/')
     }
   }, [verbs])
