@@ -26,7 +26,7 @@ export const WritingMode = ({
     if(e.keyCode == 13) {
       handlerCheckResult()
     }
-  }
+  };
 
   const handlerCheckResult = () => {
     const value = refAnswer.current.value;
@@ -37,6 +37,10 @@ export const WritingMode = ({
       handleIncorrect(answerValue)
     }
   };
+
+  useEffect(() => {
+    refAnswer.current.focus()
+  }, [question])
 
   useEffect(() => {
     refAnswer.current.value = '';
@@ -58,6 +62,7 @@ export const WritingMode = ({
         label="your answer"
         variant="outlined"
         inputRef={refAnswer}
+        autoComplete='off'
         autoFocus={true}
         onKeyDown={onPressEnter}
         classes={{ root: cn(styles.btn, styles.btn__offset) }}
