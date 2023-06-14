@@ -40,6 +40,7 @@ export const gameSlice = createSlice({
     resetGame: (state) => {
       state.round = 1;
       state.learnedIds = [];
+      console.log('ttt', state.learningIds);
     }
   },
   extraReducers: (builder) => {
@@ -52,7 +53,6 @@ export const gameSlice = createSlice({
 export const {
   setLearningIds,
   addLearned,
-  deleteLearned,
   setType,
   nextRound,
   resetGame

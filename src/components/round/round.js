@@ -1,13 +1,14 @@
 import {random} from 'lodash';
 import {useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
 import {POPUP} from '../../constants/modal.constants';
 import {languageSelector} from '../../store/common/common.selectors';
 import {SHOW_MODAL} from '../../store/common/common.slice';
 import {
-  countLearnedVerbsSelector,
-  countLearningVerbsSelector, roundSelector, studyVerbsRemainListSelector, typeModeSelector
+  roundSelector,
+  studiedVerbsIdsSelector,
+  studyVerbsIdsSelector,
+  typeModeSelector
 } from '../../store/game/game.selectors';
 import {addLearned, nextRound} from '../../store/game/game.slice';
 import {typesSelector} from '../../store/verbs/verbs.selectors';
@@ -20,20 +21,20 @@ const mappingModes = {
   writing: WritingMode
 };
 
-export const Round = () => {
-  const navigate = useNavigate();
-  const verbs = useSelector(studyVerbsRemainListSelector);
+export const Round = ({verbs}) => {
+  const dispatch = useDispatch();
+
   const typesDefault = useSelector(typesSelector);
   const round = useSelector(roundSelector);
-  const countLearningVerbs = useSelector(countLearningVerbsSelector);
-  const countLearnedVerbs = useSelector(countLearnedVerbsSelector);
+  const learningVerbs = useSelector(studyVerbsIdsSelector);
+  const learnedVerbs = useSelector(studiedVerbsIdsSelector);
+  const typeMode = useSelector(typeModeSelector);
+
+  const language = useSelector(languageSelector);
+  const Component = typeMode && mappingModes[typeMode];
+
   const [currentVerb, setCurrentVerb] = useState({});
   const [types, setTypes] = useState({ ask: '', answer: '' });
-  const typeMode = useSelector(typeModeSelector);
-  const language = useSelector(languageSelector);
-  const Component = mappingModes[typeMode];
-
-  const dispatch = useDispatch();
 
   const handleCorrect = useCallback(() => {
     dispatch(SHOW_MODAL({ name: POPUP.correctAnswer}))
@@ -50,30 +51,24 @@ export const Round = () => {
     const indexLastElem = verbs.length - 1;
     const nextElementIndex = random(0, indexLastElem);
     setCurrentVerb(verbs[nextElementIndex])
+  }, [verbs, round])
 
+  useEffect(() => {
     const [askType, answerType] = getUniqTwoRandomElements(typesDefault);
 
     setTypes({
       ask: askType === 'translate' ? language : askType,
       answer: answerType === 'translate' ? language : answerType
     })
-  }, [round])
+  }, [currentVerb, round])
 
-  useEffect(() => {
-    if(!verbs.length) {
-      dispatch(SHOW_MODAL({
-        name: POPUP.finishRound
-      }))
-      navigate('/')
-    }
-  }, [verbs])
 
+  if(!Component || !currentVerb) return null;
   const answerValue = types.answer === 'translate' ? language : currentVerb[types.answer];
-  if(!types.ask || !types.answer || !Component) return null;
 
   return <Component
-    countLearnedVerbs={countLearnedVerbs}
-    countLearningVerbs={countLearningVerbs}
+    countLearnedVerbs={learnedVerbs.length}
+    countLearningVerbs={learningVerbs.length}
     question={currentVerb[types.ask]}
     answerValue={answerValue}
     answerType={types.answer}

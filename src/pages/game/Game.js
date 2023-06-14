@@ -3,10 +3,13 @@ import {useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Round} from '../../components/round/round';
 import styles from '../../components/round/round.module.scss';
+import {useStudyVerbsRemainList} from '../../hooks/useStudyRemainList';
 import {resetGame} from '../../store/game/game.slice';
 
 export const Game = () => {
   const dispatch = useDispatch();
+  const verbs = useStudyVerbsRemainList();
+
   const onClickBack = () => {
     dispatch(resetGame())
   };
@@ -20,6 +23,6 @@ export const Game = () => {
     <h1 className={styles.title}>
       Study irregular verbs
     </h1>
-    <Round />
+    { verbs.length && <Round verbs={verbs} />}
   </>
 };
