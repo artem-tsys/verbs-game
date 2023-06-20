@@ -3,7 +3,7 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import styles from './header.module.scss';
 import {Language} from '../language/language';
 
-export const Header = ({ title }) => {
+export const Header = () => {
   const {pathname} = useLocation();
   const navigate = useNavigate();
 
@@ -24,9 +24,6 @@ export const Header = ({ title }) => {
         World List
       </Button>
     </ButtonGroup>
-    { title && <h2 className={styles.title}>
-      {title}
-    </h2>}
     <Language/>
   </header>
 }
