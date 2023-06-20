@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import {Game} from '../pages/game/Game';
 import {Home} from '../pages/home/Home';
+import WordList from '../pages/wordList/index';
 
 const routesList = [
   {
@@ -14,6 +15,10 @@ const routesList = [
   {
     path: 'game',
     component: Game,
+  },
+  {
+    path: 'wordList',
+    component: WordList,
   }
 ];
 

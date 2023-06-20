@@ -4,6 +4,7 @@ import {
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
+import {Header} from '../../components/header/header';
 import {Language} from '../../components/language/language';
 import {Mode} from '../../components/mode/mode';
 import {Verbs} from '../../components/verbs/verbs';
@@ -54,13 +55,7 @@ export const Home = () => {
   }, [learningIds])
 
   return <div className={styles.container} >
-    <header className={styles.header}>
-      <h2 className={styles.title}>
-        Select verbs for study
-      </h2>
-      <Language />
-    </header>
-
+    <Header title='Select verbs for study' />
     <div className={styles.verbs} >
       <Verbs
         selected={selected}

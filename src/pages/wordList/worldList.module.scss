@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  overflow: auto;
+  height: calc(100vh - env(safe-area-inset-top));
+}
+
+.list {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid #aeaeae;
+}
+
+.thead {
+  position: sticky;
+  top: 50px;
+  background: #ffffff;
+}
+
+.th {
+  font-weight: 600;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+}
