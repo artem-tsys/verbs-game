@@ -13,7 +13,7 @@ const Word = ({ word, types, language, isShowTranslate }) => {
       types.map(type => {
         const key = type === 'translate' ? language : type;
         const value = type === 'translate' && !isShowTranslate ? '***' : word[key];
-        return <TableCell classes={{root: styles.td}}>{value}</TableCell>
+        return <TableCell classes={{root: styles.td}} key={type}>{value}</TableCell>
       })
     }
   </TableRow>
@@ -25,7 +25,7 @@ const TableHeader = ({types, translateVisible, changeTranslateVisible}) => {
       {
         types.map(type => {
           const isIncludeButton = type === 'translate';
-          return <TableCell classes={{ root: styles.th }}>
+          return <TableCell classes={{ root: styles.th }} key={type}>
             <div className={styles.td}>
               {type}
               {isIncludeButton && <Visible isVisible={translateVisible} changeVisible={changeTranslateVisible} />}

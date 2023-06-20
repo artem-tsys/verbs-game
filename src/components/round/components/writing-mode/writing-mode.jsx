@@ -1,21 +1,23 @@
 import {Button, Stack, TextField} from '@mui/material';
 import cn from 'classnames';
+import {intersection} from 'lodash';
 import {useEffect, useRef} from 'react';
 import {Info} from '../../../info/info';
 import styles from './writing-mode.module.scss';
 
 const checkAnswer = (correct, value) => {
-  const first = correct.trim().toLowerCase();
-  const second = value.trim().toLowerCase();
+  const correctAnswers = correct.split('/').map(value => value.trim().toLowerCase());
+  const values = value.split('/').map(value => value.trim().toLowerCase());
 
-  return first === second;
+  const result = intersection(correctAnswers, values);
+  return ++result.length;
 };
 
 export const WritingMode = ({
   countLearnedVerbs,
   countLearningVerbs,
   question,
-  answerValue,
+  answerValues,
   answerType,
   handleIncorrect,
   handleCorrect
@@ -31,10 +33,10 @@ export const WritingMode = ({
   const handlerCheckResult = () => {
     const value = refAnswer.current.value;
 
-    if(checkAnswer(answerValue, value)) {
+    if(checkAnswer(answerValues, value)) {
       handleCorrect()
     } else {
-      handleIncorrect(answerValue)
+      handleIncorrect(answerValues)
     }
   };
 

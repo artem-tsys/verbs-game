@@ -64,13 +64,12 @@ export const Round = ({verbs}) => {
 
 
   if(!Component || !currentVerb) return null;
-  const answerValue = types.answer === 'translate' ? language : currentVerb[types.answer];
 
   return <Component
     countLearnedVerbs={learnedVerbs.length}
     countLearningVerbs={learningVerbs.length}
     question={currentVerb[types.ask]}
-    answerValue={answerValue}
+    answerValues={currentVerb[types.answer]}
     answerType={types.answer}
     handleCorrect={handleCorrect}
     handleIncorrect={handleIncorrect}

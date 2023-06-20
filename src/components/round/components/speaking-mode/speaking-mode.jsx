@@ -7,7 +7,7 @@ export const SpeakingMode = ({
     countLearnedVerbs,
     countLearningVerbs,
     question,
-    answerValue,
+    answerValues,
     answerType,
     handleIncorrect,
     handleCorrect
@@ -27,7 +27,7 @@ export const SpeakingMode = ({
         color='warning'
         variant='contained'
         classes={{ root: cn(styles.btn, styles.btn__offset) }}
-        onClick={() => handleIncorrect(answerValue)} >
+        onClick={() => handleIncorrect(answerValues)} >
         repeat verb
       </Button>
       <Button
