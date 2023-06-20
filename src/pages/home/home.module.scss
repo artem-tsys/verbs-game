@@ -4,16 +4,38 @@ $border-color: #aeaeae;
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto 60px;
+  grid-template-rows: auto auto 1fr auto 60px;
   width: 100%;
   height: calc(100vh - env(safe-area-inset-top));
+  grid-template-areas: 'header'
+  'title'
+  'verbs'
+  'mode'
+  'footer';
+
   @include brackpoints.tablet {
     grid-template-columns: 30% 1fr;
     grid-template-rows: initial;
+    grid-template-areas: 'header header'
+    'verbs title'
+  'verbs mode'
+  'footer footer';
   }
 };
 
-.verbs{
+.title {
+  grid-area: title;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0;
+  margin: 10px auto;
+  @include brackpoints.tablet {
+    margin: 20px auto;
+  }
+}
+
+.verbs {
+  grid-area: verbs;
   display: inline-block;
   overflow-y: auto;
   overflow-x: hidden;
@@ -24,6 +46,7 @@ $border-color: #aeaeae;
 }
 
 .footer {
+  grid-area: footer;
   display: flex;
   justify-content: center;
   align-items: center;

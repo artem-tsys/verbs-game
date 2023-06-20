@@ -13,7 +13,7 @@ const Word = ({ word, types, language, isShowTranslate }) => {
       types.map(type => {
         const key = type === 'translate' ? language : type;
         const value = type === 'translate' && !isShowTranslate ? '***' : word[key];
-        return <TableCell>{value}</TableCell>
+        return <TableCell classes={{root: styles.td}}>{value}</TableCell>
       })
     }
   </TableRow>

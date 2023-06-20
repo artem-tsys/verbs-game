@@ -1,26 +1,38 @@
+@use '../../styles/breakpoints.module.scss' as brackpoints;
+
 .container {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  overflow: auto;
   height: calc(100vh - env(safe-area-inset-top));
 }
 
 .list {
+  width: 100%;
   max-width: 600px;
   margin: 20px auto;
+  overflow: auto;
   border: 1px solid #aeaeae;
 }
 
 .thead {
   position: sticky;
-  top: 50px;
+  top: 0;
   background: #ffffff;
 }
 
 .th {
   font-weight: 600;
+  @include brackpoints.mobile {
+    padding: 0 8px!important;
+  }
 }
 
 .td {
   display: flex;
   align-items: center;
+  @include brackpoints.mobile {
+    padding: 12px 5px!important;
+    font-size: 14px!important;
+  }
 }

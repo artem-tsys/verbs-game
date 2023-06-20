@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 130px;
+  min-width: 100px;
   border: 1px solid #aeaeae;
   background: rgb(210, 208, 194);
   aspect-ratio: 1;
@@ -38,7 +38,7 @@
 }
 
 .icon {
-  font-size: 64px;
+  font-size: 48px;
   line-height: 0.8em;
   @include brackpoints.tablet {
     font-size: 122px;

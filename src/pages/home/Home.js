@@ -55,7 +55,8 @@ export const Home = () => {
   }, [learningIds])
 
   return <div className={styles.container} >
-    <Header title='Select verbs for study' />
+    <Header />
+    <h2 className={styles.title}>Select verbs for study</h2>
     <div className={styles.verbs} >
       <Verbs
         selected={selected}
