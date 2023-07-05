@@ -8,9 +8,8 @@ import styles from './writing-mode.module.scss';
 const checkAnswer = (correct, value) => {
   const correctAnswers = correct.split('/').map(value => value.trim().toLowerCase());
   const values = value.split('/').map(value => value.trim().toLowerCase());
-
   const result = intersection(correctAnswers, values);
-  return ++result.length;
+  return !!result.length;
 };
 
 export const WritingMode = ({
